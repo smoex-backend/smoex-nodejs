@@ -1,0 +1,37 @@
+{
+  "name": "@smoex-nodejs/server",
+  "version": "0.0.1",
+  "description": "A simplify work flow for redux",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smoex-nodejs/npm-repo.git"
+  },
+  "keywords": [
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smoex-logic/smoex-business/issues"
+  },
+  "homepage": "https://github.com/smoex-logic/smoex-business#readme",
+  "dependencies": {
+    "ali-oss": "^6.10.0",
+    "debug": "^4.1.1",
+    "http-proxy-middleware": "^1.0.5",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.2.0",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "^7.4.0",
+    "koa-send": "^5.0.1",
+    "koa2-connect": "^1.0.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  }
+}
