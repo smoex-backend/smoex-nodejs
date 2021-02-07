@@ -1,2 +1,3 @@
-export declare function requestProxy(proxies?: any): (ctx: any, next: any) => Promise<void>;
-export declare function staticProxy(remotePaths: any[], opts?: any): (ctx: any, next: any) => Promise<void>;
+import { Context, Next } from 'koa';
+export declare function requestProxy(): (ctx: any, next: any) => Promise<void>;
+export declare function staticProxy(): (ctx: Context, next: Next) => Promise<void>;

@@ -1,17 +1,27 @@
 import { Context, Next } from 'koa';
+import { envConfig, urlProxies, FCServiceProxy } from '../modules/aliyun';
 
-const httpProxy = require('http-proxy-middleware');
 const k2c = require('koa2-connect');
-const pathToRegexp = require('path-to-regexp');
 const send = require('koa-send')
+const proxyMiddle = require('http-proxy-middleware');
+const { aliyun } = envConfig
 
-export function requestProxy(proxies: any = {}) {
+export function requestProxy() {
     return async function (ctx: any, next: any) {
-        const { path = '' } = ctx;
-        for (const route of Object.keys(proxies)) {
+        const { path } = ctx;
+        const { httpProxy, apiProxy: serviceProxy } = urlProxies
+
+        for (const route of Object.keys(httpProxy)) {
             if (path.match(route)) {
-                const toProxy = k2c(httpProxy(proxies[route]))
-                await toProxy(ctx, next);
+                await k2c(proxyMiddle(urlProxies.httpProxy[route]))(ctx, next)
+                return
+            }
+        }
+
+        for (const name of Object.keys(serviceProxy)) {
+            const p = serviceProxy[name]
+            if (path.startsWith(p.from)) {
+                await FCServiceProxy(ctx, name)
                 return
             }
         }
@@ -19,70 +29,29 @@ export function requestProxy(proxies: any = {}) {
     }
 }
 
-function getStaticPath(ctx: Context, remotePaths: any[]) {
-    const ua = ctx.header['user-agent']
-    const isMobile = /AppleWebKit.*Mobile.*/i.test(ua)
 
-    const remoteMap = {} as any
-
-    for (const remote of remotePaths) {
-        remoteMap[remote.route] = {
-            ...remoteMap[remote.route],
-            [remote.device || 'web']: remote.path,
-        }
-    }
-
-
-    let staticPath = (isMobile && remoteMap["/"].mobile) || remoteMap["/"].web
-    for (const path of Object.keys(remoteMap)) {
-        const map = remoteMap[path]
-        const url = ctx.url.replace('/dev', '')
-        if (path !== '/' && url.startsWith(path)) {
-            staticPath = (isMobile && map.mobile) || map.web
-        }
-    }
-    return staticPath
-}
-
-export function staticProxy(remotePaths: any[], opts: any = {}) {
+export function staticProxy() {
     return async function(ctx: Context, next: Next) {
-        let done = false
+        const { res: stati } = aliyun
+        const mpath = ctx.path
 
-        const staticPath = getStaticPath(ctx, remotePaths)
-        
-        if (!staticPath) {
+        if (!stati
+            || (!stati.local && mpath.startsWith('/dev')
+            || ['/bff', '/api'].find(pre => mpath.startsWith(pre))
+        )) {
             await next()
             return
         }
 
-        ctx.config.staticPath = staticPath
-        let basePath = ctx.path.replace('/dev', '')
-        for (const remote of remotePaths) {
-            if (remote.route === '/') {
-                continue
-            }
-            if (basePath.startsWith(remote.route) && basePath !== remote.route) {
-                basePath = basePath.replace(remote.route, '')
-                break
-            }
-        }
-        
-        let path = basePath
-        // const idx = basePath.indexOf('/static')
-        // if (!basePath.startsWith('/static')) {
-        //     const m = basePath.split('/static')
-        //     console.log(777, m)
-        //     path = '/static' + m[1]
-        // }
-        // const path = idx !== -1 ? basePath.slice(idx) : basePath
+        let done = false
+        const path = ctx.path.replace('/dev', '')
+        const root = stati[ctx.config.device].path
 
-        console.log(666, staticPath, path)
-    
-        opts.root = staticPath
         if (ctx.method === 'HEAD' || ctx.method === 'GET') {
             try {
-                done = await send(ctx, path, opts)
+                done = await send(ctx, path, { root })
             } catch (err) {
+                console.error(err)
                 if (err.status !== 404) {
                     throw err
                 }

@@ -2,18 +2,26 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.staticProxy = exports.requestProxy = void 0;
 const tslib_1 = require("tslib");
-const httpProxy = require('http-proxy-middleware');
+const aliyun_1 = require("../modules/aliyun");
 const k2c = require('koa2-connect');
-const pathToRegexp = require('path-to-regexp');
 const send = require('koa-send');
-function requestProxy(proxies = {}) {
+const proxyMiddle = require('http-proxy-middleware');
+const { aliyun } = aliyun_1.envConfig;
+function requestProxy() {
     return function (ctx, next) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            const { path = '' } = ctx;
-            for (const route of Object.keys(proxies)) {
+            const { path } = ctx;
+            const { httpProxy, apiProxy: serviceProxy } = aliyun_1.urlProxies;
+            for (const route of Object.keys(httpProxy)) {
                 if (path.match(route)) {
-                    const toProxy = k2c(httpProxy(proxies[route]));
-                    yield toProxy(ctx, next);
+                    yield k2c(proxyMiddle(aliyun_1.urlProxies.httpProxy[route]))(ctx, next);
+                    return;
+                }
+            }
+            for (const name of Object.keys(serviceProxy)) {
+                const p = serviceProxy[name];
+                if (path.startsWith(p.from)) {
+                    yield aliyun_1.FCServiceProxy(ctx, name);
                     return;
                 }
             }
@@ -22,58 +30,26 @@ function requestProxy(proxies = {}) {
     };
 }
 exports.requestProxy = requestProxy;
-function getStaticPath(ctx, remotePaths) {
-    const ua = ctx.header['user-agent'];
-    const isMobile = /AppleWebKit.*Mobile.*/i.test(ua);
-    const remoteMap = {};
-    for (const remote of remotePaths) {
-        remoteMap[remote.route] = Object.assign(Object.assign({}, remoteMap[remote.route]), { [remote.device || 'web']: remote.path });
-    }
-    let staticPath = (isMobile && remoteMap["/"].mobile) || remoteMap["/"].web;
-    for (const path of Object.keys(remoteMap)) {
-        const map = remoteMap[path];
-        const url = ctx.url.replace('/dev', '');
-        if (path !== '/' && url.startsWith(path)) {
-            staticPath = (isMobile && map.mobile) || map.web;
-        }
-    }
-    return staticPath;
-}
-function staticProxy(remotePaths, opts = {}) {
+function staticProxy() {
     return function (ctx, next) {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            let done = false;
-            const staticPath = getStaticPath(ctx, remotePaths);
-            if (!staticPath) {
+            const { res: stati } = aliyun;
+            const mpath = ctx.path;
+            if (!stati
+                || (!stati.local && mpath.startsWith('/dev')
+                    || ['/bff', '/api'].find(pre => mpath.startsWith(pre)))) {
                 yield next();
                 return;
             }
-            ctx.config.staticPath = staticPath;
-            let basePath = ctx.path.replace('/dev', '');
-            for (const remote of remotePaths) {
-                if (remote.route === '/') {
-                    continue;
-                }
-                if (basePath.startsWith(remote.route) && basePath !== remote.route) {
-                    basePath = basePath.replace(remote.route, '');
-                    break;
-                }
-            }
-            let path = basePath;
-            // const idx = basePath.indexOf('/static')
-            // if (!basePath.startsWith('/static')) {
-            //     const m = basePath.split('/static')
-            //     console.log(777, m)
-            //     path = '/static' + m[1]
-            // }
-            // const path = idx !== -1 ? basePath.slice(idx) : basePath
-            console.log(666, staticPath, path);
-            opts.root = staticPath;
+            let done = false;
+            const path = ctx.path.replace('/dev', '');
+            const root = stati[ctx.config.device].path;
             if (ctx.method === 'HEAD' || ctx.method === 'GET') {
                 try {
-                    done = yield send(ctx, path, opts);
+                    done = yield send(ctx, path, { root });
                 }
                 catch (err) {
+                    console.error(err);
                     if (err.status !== 404) {
                         throw err;
                     }

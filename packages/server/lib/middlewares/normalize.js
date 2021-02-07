@@ -1,17 +1,38 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.normalizeData = exports.normalizeError = void 0;
+exports.normalizeData = exports.normalizeError = exports.ERROR_CODE = void 0;
 const tslib_1 = require("tslib");
 const stream_1 = require("stream");
+exports.ERROR_CODE = {
+    UNKNOW: 10000000000,
+    NOTFOUND: 40000000000,
+};
 exports.normalizeError = (ctx, next) => tslib_1.__awaiter(void 0, void 0, void 0, function* () {
     try {
         yield next();
     }
-    catch (error) {
-        const { code = -1, message = 'unknow error' } = error, context = tslib_1.__rest(error, ["code", "message"]);
-        ctx.body = { code, data: { message } };
-        if (Object.keys(context).length) {
-            ctx.body.context = context;
+    catch (err) {
+        console.log(err);
+        if (!err.message) {
+            err.message = 'Unknow Error';
+        }
+        if (!err.code) {
+            err.code = -1;
+        }
+        if (err.code >= exports.ERROR_CODE.UNKNOW) {
+            const { code, message } = err, context = tslib_1.__rest(err, ["code", "message"]);
+            ctx.body = Object.assign({ code, data: { message } }, context);
+            return;
+        }
+        const logMessage = `Internal Server Error: ${err.message}; ${JSON.stringify(err)}; ${new Date().toISOString()}`;
+        console.error(logMessage + `; ${JSON.stringify(ctx)}`);
+        if (err.code >= 100 && err.code <= 9999) {
+            ctx.body = logMessage;
+            ctx.status = err.code;
+        }
+        else {
+            ctx.body = logMessage;
+            ctx.status = 500;
         }
     }
 });

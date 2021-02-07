@@ -19,7 +19,9 @@
   "homepage": "https://github.com/smoex-logic/smoex-business#readme",
   "dependencies": {
     "@node-kits/koa": "^0.0.4",
+    "@types/lodash": "^4.14.168",
     "ali-oss": "^6.10.0",
+    "axios": "^0.21.1",
     "debug": "^4.1.1",
     "http-proxy-middleware": "^1.0.5",
     "koa": "^2.7.0",
@@ -29,7 +31,10 @@
     "koa-onerror": "^4.1.0",
     "koa-router": "^7.4.0",
     "koa-send": "^5.0.1",
-    "koa2-connect": "^1.0.2"
+    "koa2-connect": "^1.0.2",
+    "lodash": "^4.17.20",
+    "redux": "^4.0.5",
+    "toml": "^3.0.0"
   },
   "devDependencies": {
     "typescript": "^3.2.2"
