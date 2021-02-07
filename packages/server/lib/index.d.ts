@@ -1,4 +1,4 @@
 export * from './middlewares';
-export * from './modules/conf';
+export * from './modules/server';
 export * from './modules/aliyun';
 export * from './routers/ssrRouter';

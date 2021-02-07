@@ -1237,10 +1237,10 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@node-kits/koa@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@node-kits/koa/-/koa-0.0.4.tgz#19c90de4818a99068aaa966b823006fe2b588498"
-  integrity sha512-umHLr5w4+AzYQRrcYzl8J3ScP9IdK5Xhr1tK5XsCqIlW6Lpj2hEvk7S+GkTOWIRIYoY6a0UG5SqLMFAKnJq9wg==
+"@node-kits/koa@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/@node-kits/koa/-/koa-0.0.6.tgz#a2aa1cec565d2a7f5c001658d5ca1df7cc6b84a6"
+  integrity sha512-HIDruRPwOzM2YNZMNjgXxdDqzSNORvTPLfwTbWqKXyh5avLyn2sqCXQUdIWs+QKjieCsOZUfq2FuaMVKYAdxSQ==
   dependencies:
     "@basic-kits/js" "^0.0.5"
     "@types/debug" "^4.1.5"
@@ -1256,7 +1256,6 @@
     koa-bodyparser "^4.2.1"
     koa-json "^2.0.2"
     koa-logger "^3.2.0"
-    koa-onerror "^4.1.0"
     koa-router "^7.4.0"
     koa-send "^5.0.1"
     koa2-connect "^1.0.2"
@@ -5192,14 +5191,6 @@ koa-logger@^3.2.0:
     humanize-number "0.0.2"
     passthrough-counter "^1.0.0"
 
-koa-onerror@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/koa-onerror/-/koa-onerror-4.1.0.tgz#7949c7651941e67b11813bf1fad03c2d34470b1c"
-  integrity sha512-UDvOkkXiyVtlhRIvo9wbqKG/pTiiVE5x2uIFpG5e6OmBawxBSURG/PeFa6e6UZjjxinXde3BmPWVSIVePMG6TA==
-  dependencies:
-    escape-html "^1.0.3"
-    stream-wormhole "^1.1.0"
-
 koa-router@^7.4.0:
   version "7.4.0"
   resolved "https://registry.yarnpkg.com/koa-router/-/koa-router-7.4.0.tgz#aee1f7adc02d5cb31d7d67465c9eacc825e8c5e0"
@@ -7554,7 +7545,7 @@ stream-shift@^1.0.0:
   resolved "https://registry.yarnpkg.com/stream-shift/-/stream-shift-1.0.1.tgz#d7088281559ab2778424279b0877da3c392d5a3d"
   integrity sha512-AiisoFqQ0vbGcZgQPY1cdP2I76glaVA/RauYR4G4thNFgkTqr90yXTo4LYX60Jl+sIlPNHHdGSwo01AvbKUSVQ==
 
-stream-wormhole@^1.0.4, stream-wormhole@^1.1.0:
+stream-wormhole@^1.0.4:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/stream-wormhole/-/stream-wormhole-1.1.0.tgz#300aff46ced553cfec642a05251885417693c33d"
   integrity sha512-gHFfL3px0Kctd6Po0M8TzEvt3De/xu6cnRrjlfYNhwbhLPLwigI2t1nc6jrzNuaYg5C4YF78PPFuQPzRiqn9ew==
