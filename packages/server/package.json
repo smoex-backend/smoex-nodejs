@@ -1,6 +1,6 @@
 {
   "name": "@smoex-nodejs/server",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simplify work flow for redux",
   "main": "lib/index.js",
   "scripts": {
@@ -37,5 +37,6 @@
   },
   "devDependencies": {
     "typescript": "^3.2.2"
-  }
+  },
+  "gitHead": "f214ca3b395af1c101942e5496486e1508259d29"
 }
