@@ -1,9 +1,10 @@
 import { Context, Next } from 'koa';
 import { envConfig, urlProxies, FCServiceProxy } from '../modules/aliyun';
+// @ts-ignore
+import k2c from 'koa2-connect'
+import send from 'koa-send'
+import { createProxyMiddleware } from 'http-proxy-middleware'
 
-const k2c = require('koa2-connect');
-const send = require('koa-send')
-const proxyMiddle = require('http-proxy-middleware');
 const { aliyun } = envConfig
 
 export function requestProxy() {
@@ -13,7 +14,7 @@ export function requestProxy() {
 
         for (const route of Object.keys(httpProxy)) {
             if (path.match(route)) {
-                await k2c(proxyMiddle(urlProxies.httpProxy[route]))(ctx, next)
+                await k2c(createProxyMiddleware(urlProxies.httpProxy[route]))(ctx, next)
                 return
             }
         }
@@ -43,7 +44,7 @@ export function staticProxy() {
             return
         }
 
-        let done = false
+        let done: any = false
         const path = ctx.path.replace('/dev', '')
         const root = stati[ctx.config.device].path
 
