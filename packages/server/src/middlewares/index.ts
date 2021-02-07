@@ -1,6 +1,5 @@
 export * from './normalize'
 export * from './proxy'
-export * from './vaildate'
 
 import { Context, Next } from 'koa'
 

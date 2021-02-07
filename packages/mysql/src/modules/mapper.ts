@@ -96,10 +96,10 @@ export abstract class BaseMapper<T, Q extends BaseQuery = any> extends BaseSql {
     }
 
     protected async getConnection() {
-      if (!this.connection) {
-        this.connection = await getConnection()
-      }
-      return this.connection
+    //   if (!this.connection) {
+    //     this.connection = await getConnection()
+    //   }
+      return await getConnection()
     }
 
     public async getById(id?: number) {       

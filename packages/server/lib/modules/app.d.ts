@@ -1,3 +1,2 @@
-import Koa from 'koa';
-declare const app: Koa<Koa.DefaultState, Koa.DefaultContext>;
+declare const app: any;
 export default app;

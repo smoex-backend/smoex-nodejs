@@ -2,7 +2,6 @@
 import fs from 'fs'
 import path from 'path'
 import { PassThrough } from 'stream'
-import kstatic from 'koa-static'
 // TODO: 暂时先用这个 middleware, 路由匹配规则之后根据业务需求自己实现 
 //（主要考虑和 koa-router 规则保持一致与目前正则方案的优劣）
 import Router from 'koa-router'

@@ -1,4 +1,3 @@
-import Router from 'koa-router';
-declare const router: Router<any, {}>;
+declare const router: any;
 export default router;
-export declare function createRouter(prefix: string): Router<any, {}>;
+export declare function createRouter(prefix: string): any;

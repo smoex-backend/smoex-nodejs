@@ -15,12 +15,14 @@ const pool = mysql_1.default.createPool({
     user: 'smoex_root',
     password: 'smoexxxxx',
     connectTimeout: 500,
+    multipleStatements: true,
 });
 //返回一个Promise链接
 exports.getConnection = () => new Promise((resolve, reject) => {
     pool.getConnection((err, conn) => {
         if (err) {
             reject(err);
+            return;
         }
         const proxy = createConnectionProxy(conn);
         resolve(proxy);

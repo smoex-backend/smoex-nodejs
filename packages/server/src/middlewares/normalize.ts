@@ -22,3 +22,4 @@ export const normalizeData = async (ctx: Context, next: Next) => {
         ctx.body = { code: 0, data }
     }
 }
+

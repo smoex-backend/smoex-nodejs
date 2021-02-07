@@ -51,10 +51,10 @@ class BaseMapper extends BaseSql {
     }
     getConnection() {
         return tslib_1.__awaiter(this, void 0, void 0, function* () {
-            if (!this.connection) {
-                this.connection = yield pool_1.getConnection();
-            }
-            return this.connection;
+            //   if (!this.connection) {
+            //     this.connection = await getConnection()
+            //   }
+            return yield pool_1.getConnection();
         });
     }
     getById(id) {

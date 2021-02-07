@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/smoex-logic/smoex-business#readme",
   "dependencies": {
+    "@node-kits/koa": "^0.0.4",
     "mysql": "^2.18.1",
     "tslib": "^2.0.1"
   },

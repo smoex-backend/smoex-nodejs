@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/smoex-nodejs/npm-repo.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "lynnkoo",
   "license": "MIT",
   "bugs": {
@@ -19,6 +18,7 @@
   },
   "homepage": "https://github.com/smoex-logic/smoex-business#readme",
   "dependencies": {
+    "@node-kits/koa": "^0.0.4",
     "ali-oss": "^6.10.0",
     "debug": "^4.1.1",
     "http-proxy-middleware": "^1.0.5",

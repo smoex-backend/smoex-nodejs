@@ -3,28 +3,27 @@ import {
     initialize,
     normalizeData,
     normalizeError,
-    vaildateParams,
 } from '../middlewares'
 import Router from 'koa-router'
-import { Config } from 'http-proxy-middleware';
-import app from './app'
+// import { Config } from 'http-proxy-middleware';
 import baseRouter from './router'
+import { app } from '@node-kits/koa'
 
-export type IHttpProxyConfig = Record<string, Config>
+// export type IHttpProxyConfig = Record<string, Config>
 
 type IServerConfigure = {
     routers?: Router[],
     middlewares?: any,
     proxies?: any,
-    httpProxy?: IHttpProxyConfig,
+    // httpProxy?: IHttpProxyConfig,
 }
 
-const defaultHttpProxy: IHttpProxyConfig = {
-    // '/api/(.*)': {
-    //     changeOrigin: true,
-    //     target: 'http://gateway.smoex.com',
-    // },
-}
+// const defaultHttpProxy: IHttpProxyConfig = {
+//     // '/api/(.*)': {
+//     //     changeOrigin: true,
+//     //     target: 'http://gateway.smoex.com',
+//     // },
+// }
 
 export const createServer = (config: IServerConfigure = {}) => {
     const {

@@ -1,3 +1,2 @@
-import { Context, Next } from 'koa';
-export declare const normalizeError: (ctx: Context, next: Next) => Promise<void>;
-export declare const normalizeData: (ctx: Context, next: Next) => Promise<void>;
+export declare const normalizeError: (ctx: any, next: any) => Promise<void>;
+export declare const normalizeData: (ctx: any, next: any) => Promise<void>;
