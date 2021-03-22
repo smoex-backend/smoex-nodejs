@@ -1,0 +1,45 @@
+{
+  "name": "@smoex-nodejs/auth",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "nodemon --watch 'src/' -e ts --exec node -r ts-node/register --inspect ./src/index.ts",
+    "serve": "OSS_ENV=development node ./build/index.js ",
+    "build": "x-aliyun-cli fc-build",
+    "build:dev": "npm run build:clean && NODE_ENV=production webpack",
+    "build:clean": "node ./bin/clean.js && npm run fix:alioss",
+    "fix:alioss": "node ./bin/fix-alioss.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@basic-kits/js": "^0.0.7",
+    "@node-kits/aliyun": "^0.0.5",
+    "@node-kits/aliyun-cli": "^0.0.2",
+    "@node-kits/koa": "^0.0.8",
+    "@node-kits/mysql": "^0.0.11",
+    "@types/uuid": "^8.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "koa": "^2.7.0",
+    "mysql2": "^2.2.5",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@node-kits/http": "^0.0.2",
+    "@types/debug": "^4.1.5",
+    "@types/http-proxy-middleware": "^0.19.3",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/koa": "^2.11.3",
+    "@types/koa-router": "^7.4.1",
+    "@types/mysql": "^2.15.15",
+    "@types/node": "^14.0.20",
+    "ali-oss": "^6.13.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "compressing": "^1.5.1",
+    "nodemon": "^1.19.1",
+    "ts-node": "^8.10.2",
+    "tslib": "^2.0.0",
+    "typescript": "^3.9.6",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
+  }
+}
