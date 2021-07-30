@@ -1,26 +1,26 @@
 
-POST:
-common/sync
-    req: { name: '', json: '' }
-common/state
-    req: { name: '', access?: 'private' }
+### /data/shared
 
--- has auth
-users/sync
-    req: { name: '', json: '' }
+- GET: /data/shared/lastest
+    - req: { name: '' }
+    - resp: { json: '' }
+- GET: /data/shared/history
+    - req: { name: '' }
+    - resp: { list: [] }
 
-GET
-common/lastest
-    req: { name: '' }
-    resp: { json: '' }
-common/history
-    req: { name: '' }
-    resp: { list: [] }
+- POST: data/shared/sync
+    - req: { name: '', json: '' }
+- POST: data/shared/state
+    - req: { name: '', access?: 'private' }
 
--- has auth
-users/lastest
-    req: { name: '' }
-    resp: { json: '' }
-users/history
-    req: { name: '' }
-    resp: { list: [] }
+### /data/users
+
+- GET: users/lastest
+    - req: { name: '' }
+    - resp: { json: '' }
+- GET: users/history
+    - req: { name: '' }
+    - resp: { list: [] }
+
+- POST: data/users/sync
+    - req: { name: '', json: '' }

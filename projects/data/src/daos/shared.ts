@@ -1,7 +1,6 @@
 import { mysqlClients, resClients } from '@jsk-aliyun/env'
 import mysql, { ResultSetHeader } from 'mysql2/promise'
 import { DataRow, DataModel, COMMON_DSL, COMMON_HISTORY_DSL, BaseHistoryModel } from '../types/mapper'
-import { PassThrough } from 'stream'
 
 export function createTimePath() {
     const now = (new Date()).toISOString()

@@ -1,14 +1,14 @@
 import Router from 'koa-router'
-const router = new Router({ prefix: '/data/users' })
-export default router
+// const router = new Router({ prefix: '/data/users' })
+// export default router
 
 import * as usersDao from '../daos/users'
 
-// 同步用户数据
-router.post('/sync', _syncData)
-router.get('/latest', _latestData)
+// // 同步用户数据
+// router.post('/sync', _syncData)
+// router.get('/latest', _latestData)
 
-async function _syncData(ctx: any) {
+export async function syncData(ctx: any) {
     const rbody = ctx.request.body
     if (!rbody.name || !ctx.query.uid) {
         throw new Error('参数错误')
@@ -20,7 +20,7 @@ async function _syncData(ctx: any) {
     }, Number(ctx.query.uid))
 }
 
-async function _latestData(ctx: any) {
+export async function latestData(ctx: any) {
     if (!ctx.query.name || !ctx.query.uid) {
         throw new Error('参数错误')
     } 
