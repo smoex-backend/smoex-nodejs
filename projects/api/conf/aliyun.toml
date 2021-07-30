@@ -1,0 +1,6 @@
+[fc]
+region = "cn-shanghai"
+alias = "smoex-nodejs-api.30036141340C"
+
+[fc.data]
+alias = "smoex-nodejs-data.764D2ACE6139"

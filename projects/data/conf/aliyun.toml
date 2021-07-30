@@ -1,0 +1,28 @@
+[fc]
+region = "cn-shanghai"
+alias = 'smoex-nodejs-data.764D2ACE6139'
+
+[res]
+client = 'oss://stable'
+
+[res.common]
+package = 'data_common'
+
+[res.users]
+package = 'data_users'
+
+[oss]
+region = "oss-cn-shanghai"
+
+[oss.stable]
+bucket = "smoex-public"
+endpoint = "https://public.smoex.com"
+
+[mysql]
+host = "rm-uf6ptrnm757lc165v125010.mysql.rds.aliyuncs.com"
+
+[mysql.data]
+database = 'smoex_base__data'
+
+[redis.data]
+host = 'r-uf6b4a74bc1d3ab4.redis.rds.aliyuncs.com'

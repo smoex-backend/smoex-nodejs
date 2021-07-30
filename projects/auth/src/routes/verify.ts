@@ -3,26 +3,20 @@ import { fcClients, redisClients } from '@node-kits/aliyun'
 import { checkAuth } from './middleware';
 import { v4 as uuidv4 } from 'uuid'
 import { decodeToken, encodeToken } from '../utils/jwt';
-
-
-
 const router = new Router({ prefix: '/verify' })
+export default router
+
+
 const sendEntity = [
     { name: 'target', type: 'string' },
 ]
 
 const fcPush = fcClients['push']
+const redis = redisClients['auth']
 
-
+router.get('/token', _token)
 router.post('/send', checkAuth, _send)
 router.post('/check', checkAuth, _check)
-router.get('/token', _token)
-
-
-export default router
-
-
-const redis = redisClients['auth']
 
 async function _send(ctx: any) {
   const msg = ctx.validate(sendEntity)
