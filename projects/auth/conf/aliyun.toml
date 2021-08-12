@@ -1,11 +1,9 @@
-[env.fc]
-alias = 'smoex-nodejs--auth.62B8C90022D9'
-
 [fc]
 region = "cn-shanghai"
+alias = 'smoex-nodejs-auth.CFBF5827F9D8'
 
 [fc.push]
-alias = 'smoex-nodejs--push.7B2EC857050B'
+alias = 'smoex-nodejs-push.7B7CB2D85356'
 
 [redis.auth]
 host = 'r-uf6b4a74bc1d3ab4.redis.rds.aliyuncs.com'

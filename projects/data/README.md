@@ -1,26 +1,39 @@
 
-### /data/shared
+### /data/shared -- 公用数据
 
-- GET: /data/shared/lastest
+- GET: /data/shared
     - req: { name: '' }
     - resp: { json: '' }
 - GET: /data/shared/history
     - req: { name: '' }
     - resp: { list: [] }
 
-- POST: data/shared/sync
+- POST: /data/shared/sync
     - req: { name: '', json: '' }
-- POST: data/shared/state
+- POST: /data/shared/state
     - req: { name: '', access?: 'private' }
 
-### /data/users
+### /data/users -- 注册用户相关数据
 
-- GET: users/lastest
+- GET: /data/users
     - req: { name: '' }
     - resp: { json: '' }
-- GET: users/history
+- GET: /data/users/history
     - req: { name: '' }
     - resp: { list: [] }
 
-- POST: data/users/sync
+- POST: /data/users/sync
+    - req: { name: '', json: '' }
+
+### /data/guest -- 未登录用户数据 (方案待定
+
+- GET: /data/guest
+    - req: { name: '' }
+    - resp: { json: '' }
+
+- GET: /data/users/history
+    - req: { name: '' }
+    - resp: { list: [] }
+
+- POST: /data/users/sync
     - req: { name: '', json: '' }

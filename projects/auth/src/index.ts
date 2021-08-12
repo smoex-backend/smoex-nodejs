@@ -1,8 +1,9 @@
-import { listenServer } from '@node-kits/koa'
-import { createAPIServer  } from '@node-kits/aliyun'
-import verifyRouter from "./routes/verify";
+import { listenServer, createServer } from '@jsk-server/koa'
+import routers from './routers'
+import { configure } from './middlewares'
 
-const routers = [verifyRouter]
-const app = createAPIServer(routers)
+const app = createServer(routers, {
+    middlewares: { configure },
+})
 
 listenServer(app)

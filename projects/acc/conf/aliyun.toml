@@ -1,0 +1,15 @@
+[fc]
+region = "cn-shanghai"
+alias = 'smoex-nodejs-acc.CFF873FA4611'
+
+[fc.auth]
+alias = 'smoex-nodejs-auth.CFBF5827F9D8'
+
+[redis.auth]
+host = 'r-uf6b4a74bc1d3ab4.redis.rds.aliyuncs.com'
+
+[mysql]
+host = "rm-uf6ptrnm757lc165v125010.mysql.rds.aliyuncs.com"
+
+[mysql.users]
+database = 'smoex-base__users'

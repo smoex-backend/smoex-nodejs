@@ -1,2 +1,5 @@
 ['/data']
 client = 'fc://data'
+
+['/auth']
+client = 'fc://auth'

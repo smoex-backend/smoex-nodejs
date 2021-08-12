@@ -1,9 +1,9 @@
-import { listenServer, createAPIServer } from '@jsk-server/koa'
-import { configure, requestProxy } from './middlewares'
+import { listenServer, createServer } from '@jsk-server/koa'
+import { configure } from './middlewares'
 import routers from './routers'
 
-const app = createAPIServer(routers, {
-    configure,
+const app = createServer(routers, {
+    middlewares: { configure },
 })
 
 listenServer(app)

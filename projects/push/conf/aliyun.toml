@@ -1,0 +1,6 @@
+[fc]
+alias = 'smoex-nodejs-push.7B7CB2D85356'
+
+[sms.checkcode]
+sign = 'smoex'
+template = 'SMS_175537915'

@@ -1,0 +1,3 @@
+['/acc/auth']
+to = "/auth/users"
+client = "fc://auth"

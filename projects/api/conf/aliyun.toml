@@ -4,3 +4,6 @@ alias = "smoex-nodejs-api.30036141340C"
 
 [fc.data]
 alias = "smoex-nodejs-data.764D2ACE6139"
+
+[fc.acc]
+alias = "smoex-nodejs-data.CFF873FA4611"

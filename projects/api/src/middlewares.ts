@@ -15,25 +15,31 @@ export async function requestProxy(ctx: Koa.Context, next: Koa.Next) {
         method: ctx.method,
         // @ts-ignore
         body: ctx.request.body,
+        headers: { 'Cookie': ctx.headers['cookie'] },
     })
     const httpProxy = matcher('http://')
-    const fcProxy = matcher('fc://')
+    
     if (httpProxy) {
         const httpMiddleware = k2c(createProxyMiddleware(httpProxy))
         await httpMiddleware(ctx, next)
         return
     }
 
+    const fcProxy = matcher('fc://')
     if (fcProxy) {
         const resp = await fcRequestProxy(fcProxy)
         ctx.body = resp.data
-        for (const key of Object.keys(resp.headers)) {
-            const val = resp.headers[key]
-            const transkey = key.replace(/^.{1}|-.{1}/g, x => x.toUpperCase())
-            ctx.set(transkey, val)
-        }
-        ctx.set('Content-Disposition', 'inline')
+        setResponseHeaders(ctx, resp.headers)
         return
     }
     await next()
+}
+
+function setResponseHeaders(ctx: Koa.Context, headers: any) {
+    for (const key of Object.keys(headers)) {
+        const val = headers[key]
+        const transkey = key.replace(/^.{1}|-.{1}/g, x => x.toUpperCase())
+        ctx.set(transkey, val)
+    }
+    ctx.set('Content-Disposition', 'inline')
 }

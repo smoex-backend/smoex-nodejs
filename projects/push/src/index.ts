@@ -1,8 +1,9 @@
-import { listenServer } from '@node-kits/koa'
-import { createAPIServer  } from '@node-kits/aliyun'
-import smsRouter from "./routes/sms";
+import { listenServer, createServer } from '@jsk-server/koa'
+import { configure } from './middlewares';
+import routers from "./routers";
 
-const routers = [smsRouter]
-const app = createAPIServer(routers)
+const app = createServer(routers, {
+    middlewares: { configure }
+})
 
 listenServer(app)

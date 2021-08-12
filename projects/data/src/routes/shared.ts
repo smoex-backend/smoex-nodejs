@@ -1,28 +1,31 @@
-import Router, { RouterContext } from 'koa-router'
+import { RouterContext } from 'koa-router'
 import * as sharedDao from '../daos/shared' 
 
-const ACCESS_MAP = {
-    'private': 0,
-    'public': 1,
-    'latest': 2,
-} as const
+export async function syncData(ctx: RouterContext) {
+    const params = ctx.jsk.params([
+        { name: 'name', type: 'string' },
+        { name: 'json', type: 'string' },
+    ])
 
-export async function syncData(ctx: any) {
-    const rbody = ctx.request.body
-    if (!rbody.name) {
-        throw '参数错误'
+    if (!params.json || !params.name) {
+        throw new Error('参数错误')
     }
+
     ctx.body = await sharedDao.syncData({
-        name: rbody.name,
-        preview: rbody.json,
+        name: params.name,
+        preview: params.json,
         type: 1,
     })
 }
 
 export async function latestData(ctx: RouterContext) {
-    ctx.path
-    if (!ctx.query.name) {
-        throw '参数错误'
-    } 
-    ctx.body = await sharedDao.getLatest(ctx.query.name as string)
+    const params = ctx.jsk.params([
+        { name: 'name', type: 'string' },
+    ])
+
+    if (!params.name) {
+        throw new Error('参数错误')
+    }
+
+    ctx.body = await sharedDao.getLatest(params.name)
 }

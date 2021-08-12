@@ -1,0 +1,6 @@
+
+[mysql]
+host = "rm-uf6ptrnm757lc165vao.mysql.rds.aliyuncs.com"
+
+[redis.auth]
+host = 'r-uf6b4a74bc1d3ab4pd.redis.rds.aliyuncs.com'
