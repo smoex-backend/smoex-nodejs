@@ -27,5 +27,5 @@ export async function latestData(ctx: RouterContext) {
         throw new Error('参数错误')
     }
 
-    ctx.body = await sharedDao.getLatest(params.name)
+    ctx.body = await sharedDao.getLatest(params.name) || {}
 }
