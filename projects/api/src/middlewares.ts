@@ -39,7 +39,7 @@ function asRequestHeader(headers: any) {
     if (headers['cookie']) {
         newHeaders['Cookie'] = headers['cookie']
     }
-    return headers
+    return newHeaders
 }
 function setResponseHeaders(ctx: Koa.Context, headers: any) {
     if (!headers) {

@@ -13,12 +13,12 @@ export async function configure(ctx: Koa.Context, next: Koa.Next) {
 }
 
 export async function requestProxy(ctx: Koa.Context, next: Koa.Next) {
-    
     const matcher = createProxyMatcher({
         url: ctx.url,
         method: ctx.method,
+        // @ts-ignore
         body: ctx.request.body,
-        headers: { 'Cookie': ctx.headers['cookie'] },
+        headers: asRequestHeader(ctx.headers)
     })
     const httpProxy = matcher('http://')
     
@@ -37,6 +37,14 @@ export async function requestProxy(ctx: Koa.Context, next: Koa.Next) {
         return
     }
     await next()
+}
+
+function asRequestHeader(headers: any) {
+    const newHeaders = {} as any
+    if (headers['cookie']) {
+        newHeaders['Cookie'] = headers['cookie']
+    }
+    return newHeaders
 }
 
 function setResponseHeaders(ctx: Koa.Context, headers: any) {

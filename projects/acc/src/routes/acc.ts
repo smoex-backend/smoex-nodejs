@@ -34,9 +34,11 @@ export async function logout(ctx: RouterContext) {
 export async function info(ctx: RouterContext) {
   const fcAuth = fcClients['auth']
   const cookieToken = ctx.cookies.get('token')
-  const res = await fcAuth.get('/auth/users/token', {}, {
-    headers: { 'Cookie': ctx.headers['cookie'] },
-  })
+  const headers = {} as any
+  if (ctx.headers['cookie']) {
+    headers['Cookie'] = ctx.headers['cookie']
+  }
+  const res = await fcAuth.get('/auth/users/token', {}, { headers })
   if (res.headers['set-cookie']) {
     ctx.set('set-cookie', res.headers['set-cookie'])
   }
