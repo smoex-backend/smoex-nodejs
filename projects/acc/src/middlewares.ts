@@ -3,12 +3,20 @@ import { revertRequestUrl, createProxyMatcher, fcRequestProxy } from '@jsk-aliyu
 import k2c from 'koa2-connect'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import Koa from 'koa'
-import { decodeToken } from './utils/jwt'
+import { decodeToken, encodeToken } from './utils/jwt'
 import { redisClients } from '@jsk-aliyun/env'
 
+function delayDate(second: number) {
+    return new Date(Date.now() + 1000 * second)
+}
 
 export async function configure(ctx: Koa.Context, next: Koa.Next) {
     ctx.url = revertRequestUrl(ctx.url)
+    ctx.auth = ctx.auth || {}
+    ctx.auth.setToken = (data: any) => {
+        const expires = delayDate(60 * 60 * 24 * 30)
+        ctx.cookies.set('token', encodeToken(data), { secure: true, sameSite: 'none', expires })
+    }
     await next();
 }
 
@@ -31,7 +39,6 @@ export async function requestProxy(ctx: Koa.Context, next: Koa.Next) {
     const fcProxy = matcher('fc://')
     if (fcProxy) {
         const resp = await fcRequestProxy(fcProxy)
-        console.log(resp)
         ctx.body = resp.data
         setResponseHeaders(ctx, resp.headers)
         return
@@ -44,6 +51,7 @@ function asRequestHeader(headers: any) {
     if (headers['cookie']) {
         newHeaders['Cookie'] = headers['cookie']
     }
+    newHeaders['X-Forwarded-Proto'] = 'https'
     return newHeaders
 }
 

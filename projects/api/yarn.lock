@@ -1040,10 +1040,10 @@
     webpack-cli "^3.3.12"
     yargs "^17.0.0-candidate.13"
 
-"@jsk-server/koa@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.nlark.com/@jsk-server/koa/download/@jsk-server/koa-0.0.2.tgz#103108016123688c9773e41102252da0fb2ced1b"
-  integrity sha1-EDEIAWEjaIyXc+QRAiUtoPss7Rs=
+"@jsk-server/koa@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.7.tgz#d6b20e47f594be4c6a4ef47e328d65d73e9d8eb7"
+  integrity sha512-FxEj0VGaLQFZ+L/eMPmewTQUdmj7/KdpItrp/sgzP2YNHGRl1DLmhDcFqivD7H0J2lTRR/ZXxAVx9SHFrvrqEw==
   dependencies:
     debug "^4.1.1"
     http-proxy-middleware "^1.0.5"
@@ -1088,6 +1088,13 @@
   version "0.0.2"
   resolved "https://registry.nlark.com/@jsk-std/x/download/@jsk-std/x-0.0.2.tgz#e477fb987da0674a61bebaf23c4931fb25e88a3a"
   integrity sha1-5Hf7mH2gZ0phvrryPEkx+yXoijo=
+
+"@koa/cors@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@koa/cors/-/cors-3.1.0.tgz#618bb073438cfdbd3ebd0e648a76e33b84f3a3b2"
+  integrity sha512-7ulRC1da/rBa6kj6P4g2aJfnET3z8Uf3SWu60cjbtxTA5g8lxRdX/Bd2P92EagGwwAhANeNw8T8if99rJliR6Q==
+  dependencies:
+    vary "^1.1.2"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
@@ -3461,11 +3468,6 @@ koa-convert@^1.2.0:
   dependencies:
     co "^4.6.0"
     koa-compose "^3.0.0"
-
-koa-cors@^0.0.16:
-  version "0.0.16"
-  resolved "https://registry.yarnpkg.com/koa-cors/-/koa-cors-0.0.16.tgz#98107993a7909e34c042986c5ec6156d77f3432e"
-  integrity sha1-mBB5k6eQnjTAQphsXsYVbXfzQy4=
 
 koa-is-json@1:
   version "1.0.0"

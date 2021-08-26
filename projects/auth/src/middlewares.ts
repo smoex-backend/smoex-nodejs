@@ -3,13 +3,25 @@ import { revertRequestUrl, createProxyMatcher, fcRequestProxy } from '@jsk-aliyu
 import k2c from 'koa2-connect'
 import { createProxyMiddleware } from 'http-proxy-middleware'
 import Koa from 'koa'
-import { decodeToken } from './utils/jwt'
+import { decodeToken, encodeToken } from './utils/jwt'
+import Cookies from 'cookies'
+
+function delayDate(second: number) {
+    return new Date(Date.now() + 1000 * second)
+}
 
 export async function configure(ctx: Koa.Context, next: Koa.Next) {
     ctx.url = revertRequestUrl(ctx.url)
+    ctx.auth = ctx.auth || {}
+    ctx.auth.setToken = (data: any) => {
+        const expires = delayDate(60 * 60 * 24 * 30)
+        const options: Cookies.SetOption = true 
+            ? { secure: true, sameSite: 'none', expires } 
+            : { sameSite: 'strict' , expires }
+        ctx.cookies.set('token', encodeToken(data), options )
+    }
     await next();
 }
-
 
 export async function requestProxy(ctx: Koa.Context, next: Koa.Next) {
     const matcher = createProxyMatcher({

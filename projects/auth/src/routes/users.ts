@@ -1,6 +1,6 @@
 import { IRouterContext, RouterContext } from 'koa-router';
 import { fcClients, redisClients } from '@jsk-aliyun/env'
-import { decodeToken, encodeToken, randomCode, createUUID } from '../utils/jwt';
+import { decodeToken, randomCode, createUUID } from '../utils/jwt';
 import * as wx from '../utils/wx'
 
 type IAccessData = {
@@ -37,7 +37,8 @@ export async function getToken(ctx: RouterContext) {
   // 1. 不存在 token 则创建 token
   if (!token) {
     data.uuid = createUUID()
-    ctx.cookies.set('token', encodeToken(data))
+    // @ts-ignore
+    ctx.auth.setToken(data)
     ctx.body = 'created token'
     return
   }
@@ -46,7 +47,8 @@ export async function getToken(ctx: RouterContext) {
   try {
     const data = decodeToken(token) as IJwtAuthData
     // 3. 若 token 没有过期, 则刷新 token 的有效时间
-    ctx.cookies.set('token', encodeToken(data))
+    // @ts-ignore
+    ctx.auth.setToken(data)
     // 获取 session 信息
     const accessKey = `[access:login]${data.uuid}`
     const session = await redis.getJSON<IAccessData>(accessKey)
@@ -59,7 +61,8 @@ export async function getToken(ctx: RouterContext) {
     console.log(e)
     // token 若失效则新建 token, 登录无关, 仅 jwt token 时间
     data.uuid = createUUID()
-    ctx.cookies.set('token', encodeToken(data))
+    // @ts-ignore
+    ctx.auth.setToken(data)
     ctx.body = 'exprired token'
   }
 }
@@ -210,6 +213,7 @@ export async function sendcode(ctx: RouterContext) {
         type: targetType,
       } 
       const jwtAuthData: IJwtAuthData = { uuid: token.uuid, check: jwtCheckData }
-      ctx.cookies.set('token', encodeToken(jwtAuthData))
+      // @ts-ignore
+      ctx.auth.setToken(jwtAuthData)
     }
 }

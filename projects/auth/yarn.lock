@@ -1050,10 +1050,10 @@
     lodash "^4.17.21"
     toml "^3.0.0"
 
-"@jsk-server/koa@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.5.tgz#d9ace90b4f4488c9c429524b9d9a9c6b96287a2c"
-  integrity sha512-m0xU1R6+zxHX2MSLmW+fCWpsK4bVpAiKkG1qVWEFpY3GRQmqO82uKBoyMlY3DqJGkYy8otVv1E27DAZal672nQ==
+"@jsk-server/koa@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.7.tgz#d6b20e47f594be4c6a4ef47e328d65d73e9d8eb7"
+  integrity sha512-FxEj0VGaLQFZ+L/eMPmewTQUdmj7/KdpItrp/sgzP2YNHGRl1DLmhDcFqivD7H0J2lTRR/ZXxAVx9SHFrvrqEw==
   dependencies:
     debug "^4.1.1"
     http-proxy-middleware "^1.0.5"
@@ -1098,6 +1098,13 @@
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@jsk-std/x/-/x-0.0.2.tgz#e477fb987da0674a61bebaf23c4931fb25e88a3a"
   integrity sha512-k0z8YQyuKBlDAtJQwpappEnaLBKsHoyfnFFNn4vgwsQCqle8IukxMg2OWtB/7wnBZnJw6AeBnSQhiC484E2mxQ==
+
+"@koa/cors@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.npm.taobao.org/@koa/cors/download/@koa/cors-3.1.0.tgz#618bb073438cfdbd3ebd0e648a76e33b84f3a3b2"
+  integrity sha1-YYuwc0OM/b0+vQ5kinbjO4Tzo7I=
+  dependencies:
+    vary "^1.1.2"
 
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"

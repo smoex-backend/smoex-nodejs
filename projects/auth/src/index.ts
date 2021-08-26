@@ -6,4 +6,6 @@ const app = createServer(routers, {
     middlewares: { configure },
 })
 
+app.proxy = true
+
 listenServer(app)

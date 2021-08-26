@@ -1,7 +1,9 @@
-import { listenServer, createAPIServer } from '@jsk-server/koa'
+import { listenServer, createServer } from '@jsk-server/koa'
 import { requestProxy, configure } from './middlewares'
 import { fcClients } from '@jsk-aliyun/env'
 import Router from 'koa-router'
+// @ts-ignore
+import cors from '@koa/cors'
 
 const router = new Router({ prefix: '/test'})
 router.get('/*', async ctx => {
@@ -13,9 +15,10 @@ router.get('/*', async ctx => {
     console.log(resp)
     ctx.body = resp.data
 })
-const app = createAPIServer([router], {
-    configure,
-    request: requestProxy,
+const routers = [router]
+const app = createServer(routers, {
+    middlewares: { configure, requestProxy }
 })
-
+// @ts-ignore
+app.use(cors())
 listenServer(app)

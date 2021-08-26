@@ -1062,10 +1062,10 @@
     lodash "^4.17.21"
     toml "^3.0.0"
 
-"@jsk-server/koa@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.5.tgz#d9ace90b4f4488c9c429524b9d9a9c6b96287a2c"
-  integrity sha512-m0xU1R6+zxHX2MSLmW+fCWpsK4bVpAiKkG1qVWEFpY3GRQmqO82uKBoyMlY3DqJGkYy8otVv1E27DAZal672nQ==
+"@jsk-server/koa@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.7.tgz#d6b20e47f594be4c6a4ef47e328d65d73e9d8eb7"
+  integrity sha512-FxEj0VGaLQFZ+L/eMPmewTQUdmj7/KdpItrp/sgzP2YNHGRl1DLmhDcFqivD7H0J2lTRR/ZXxAVx9SHFrvrqEw==
   dependencies:
     debug "^4.1.1"
     http-proxy-middleware "^1.0.5"
@@ -1159,13 +1159,6 @@
   version "6.0.10"
   resolved "https://registry.yarnpkg.com/@types/ali-oss/-/ali-oss-6.0.10.tgz#258df7ff4816aea5f3a321c5caf16b1007bc02b8"
   integrity sha512-EXqo2boy4TZGJqwm97lCTlOmjLPYyQ4Cd5AtYThYDm0aOnHbl96gbf/6iDAR5IQMhO28EVvCfi8TwuBMTF3gig==
-
-"@types/axios@^0.14.0":
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/@types/axios/-/axios-0.14.0.tgz#ec2300fbe7d7dddd7eb9d3abf87999964cafce46"
-  integrity sha1-7CMA++fX3d1+udOr+HmZlkyvzkY=
-  dependencies:
-    axios "*"
 
 "@types/body-parser@*":
   version "1.19.1"
@@ -1677,13 +1670,6 @@ atob@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
-
-axios@*, axios@^0.21.1:
-  version "0.21.1"
-  resolved "https://registry.yarnpkg.com/axios/-/axios-0.21.1.tgz#22563481962f4d6bde9a76d516ef0e5d3c09b2b8"
-  integrity sha512-dKQiRHxGD9PPRIUNIWvZhPTPpl1rf/OxTYKsqKUDjBwYylTvV7SjSHJb9ratfyzM6wCdLCOYLzs73qpg5c4iGA==
-  dependencies:
-    follow-redirects "^1.10.0"
 
 babel-loader@^8.2.2:
   version "8.2.2"
@@ -2661,7 +2647,7 @@ flushwritable@^1.0.0:
   resolved "https://registry.yarnpkg.com/flushwritable/-/flushwritable-1.0.0.tgz#3e328d8fde412ad47e738e3be750b4d290043498"
   integrity sha1-PjKNj95BKtR+c44751C00pAENJg=
 
-follow-redirects@^1.0.0, follow-redirects@^1.10.0:
+follow-redirects@^1.0.0:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.14.1.tgz#d9114ded0a1cfdd334e164e6662ad02bfd91ff43"
   integrity sha512-HWqDgT7ZEkqRzBvc2s64vSZ/hfOceEol3ac/7tKwzuvEyWx3/4UegXh5oBOIotkGsObyk3xznnSRVADBgWSQVg==

@@ -10,6 +10,7 @@ type IWechatSession = {
 }
 
 export async function checkcode(code: number, name?: string) {
+    // @ts-ignore
     const conf = !name ? authConfigs.wechat : authConfigs.wechat?.[name]
     if (!conf) {
         throw new Error('auth 配置错误')
@@ -25,5 +26,6 @@ export async function checkcode(code: number, name?: string) {
 }
 
 export function checkAppName(name: string) {
+    // @ts-ignore
     return !!authConfigs.wechat?.[name]
 }

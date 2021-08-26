@@ -1,6 +1,5 @@
 import { RouterContext } from "koa-router";
 import { redisClients } from '@jsk-aliyun/env'
-import { encodeToken } from '../utils/jwt';
 import * as usersDao from '../daos/users'
 
 type IAccessData = {
@@ -41,7 +40,8 @@ export async function login(ctx: RouterContext) {
     session.expired = 7 * 24 * 60 * 60
     await redis.setex(sessionKey, session.expired, JSON.stringify(session)) 
     const jwtAuthData = { uuid: token.uuid, user }
-    ctx.cookies.set('token', encodeToken(jwtAuthData))
+    // @ts-ignore
+    ctx.auth.setToken(jwtAuthData)
     ctx.body = { success: true }
   } else {
     ctx.body = { success: false }
@@ -87,7 +87,8 @@ export async function regist(ctx: RouterContext) {
   session.expired = 7 * 24 * 60 * 60
   await redis.setex(sessionKey, session.expired, JSON.stringify(session)) 
   const jwtAuthData = { uuid: token.uuid, user }
-  ctx.cookies.set('token', encodeToken(jwtAuthData))
+  // @ts-ignore
+  ctx.auth.setToken(jwtAuthData)
   ctx.body = { success: true }
 }
 
