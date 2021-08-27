@@ -4,7 +4,7 @@
   "main": "build/index.js",
   "scripts": {
     "start": "jsk-server start",
-    "build": "npm run fix && jsk-aliyun fc-build",
+    "build": "jsk-aliyun fc-build",
     "serve": "node ./dist/index.js",
     "fix": "node ./node_modules/@jsk-aliyun/cli/legacy/fix-alioss.js"
   },
@@ -18,10 +18,11 @@
     "@jsk-aliyun/env": "^0.0.5",
     "@jsk-server/cli": "^0.0.4",
     "@jsk-server/env": "^0.0.2",
-    "@jsk-server/koa": "^0.0.7",
+    "@jsk-server/koa": "^0.0.8",
     "@jsk-server/mysql": "0.0.2",
     "@jsk-server/redis": "^0.0.1",
     "@koa/cors": "^3.1.0",
+    "@smoex-nodejs/middle": "^0.0.1",
     "@types/axios": "^0.14.0",
     "@types/jsonwebtoken": "^8.5.4",
     "@types/koa-bodyparser": "^4.3.3",

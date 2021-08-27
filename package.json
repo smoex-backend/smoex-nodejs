@@ -11,7 +11,9 @@
   },
   "scripts": {
     "init": "yarn install && lerna bootstrap --use-workspaces && npm run build",
-    "build": "lerna run --stream --sort build",
+    "start": "node ./bin/start.js",
+    "build": "lerna run --stream --sort build && npm run copy",
+    "copy": "node ./bin/copy.js",
     "pub": "lerna exec --parallel -- npm publish",
     "build:prod": "npm run clean:cache && npm run build",
     "build:pub": "npm run build:prod && lerna publish -y",
@@ -20,7 +22,8 @@
     "clean:init": "npm run clean && npm run init",
     "format": "npm run format:tslint",
     "format:tslint": "tslint --fix --config ./tslint.json 'src/**/*.{ts,tsx}'",
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "fix": "node ./node_modules/@jsk-aliyun/cli/legacy/fix-alioss.js"
   },
   "devDependencies": {
     "cross-env": "^7.0.2",

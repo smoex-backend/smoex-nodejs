@@ -1,6 +1,6 @@
 import Router from 'koa-router'
 import * as usersRoutes from './routes/users'
-import { guestAuth } from './middlewares'
+import { guestAuth } from '@smoex-nodejs/middle'
 
 // users 相关 router
 const usersRouter = new Router({ prefix: '/auth/users'})

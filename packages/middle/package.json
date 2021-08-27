@@ -1,0 +1,42 @@
+{
+  "name": "@smoex-nodejs/middle",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lynnkoo/browser-basic-kit.git"
+  },
+  "keywords": [
+    "user agent"
+  ],
+  "author": "lynnkoo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lynnkoo/browser-basic-kit/issues"
+  },
+  "homepage": "https://github.com/lynnkoo/browser-basic-kit#readme",
+  "devDependencies": {
+    "typescript": "^3.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "f12b8bd6d88f9f211723965110f37be5cb72617d",
+  "dependencies": {
+    "@jsk-aliyun/env": "^0.0.5",
+    "@jsk-server/env": "^0.0.2",
+    "@jsk-server/koa": "^0.0.8",
+    "@jsk-server/redis": "^0.0.1",
+    "@types/jsonwebtoken": "^8.5.4",
+    "@types/koa": "^2.13.4",
+    "@types/uuid": "^8.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "ts-node": "^10.1.0",
+    "uuid": "^8.3.2"
+  }
+}

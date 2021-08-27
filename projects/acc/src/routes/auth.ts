@@ -27,15 +27,13 @@ export async function login(ctx: RouterContext) {
   if (!accessType) {
     throw new Error('不支持的鉴权类型')
   }
-
   let user: any
   if (isAccessTokenType(session.type)) {
     user = await usersDao.getByAccessToken(session.target, accessType)
   } else {
     user = await usersDao.getByVerification(session.target, accessType)
   }
-
-  if (user) {
+  if (user && !token.user) {
     // 登录成功后保持7天登录有效期
     session.expired = 7 * 24 * 60 * 60
     await redis.setex(sessionKey, session.expired, JSON.stringify(session)) 
@@ -43,8 +41,10 @@ export async function login(ctx: RouterContext) {
     // @ts-ignore
     ctx.auth.setToken(jwtAuthData)
     ctx.body = { success: true }
+  } else if (user) {
+    ctx.body = { success: true, message: '用户已登录' }
   } else {
-    ctx.body = { success: false }
+    ctx.body = { success: false, message: '用户不存在' }
   }
 }
 

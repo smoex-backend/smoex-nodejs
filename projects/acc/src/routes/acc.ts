@@ -34,6 +34,8 @@ export async function logout(ctx: RouterContext) {
 export async function info(ctx: RouterContext) {
   const fcAuth = fcClients['auth']
   const cookieToken = ctx.cookies.get('token')
+  // 1. 设置默认返回值
+  ctx.body = { id: 0 }
   if (cookieToken) {
     const token = decodeToken(cookieToken)
     ctx.body = token.user || ctx.body
@@ -41,12 +43,9 @@ export async function info(ctx: RouterContext) {
   const headers = {} as any
   if (ctx.headers['cookie']) {
     headers['Cookie'] = ctx.headers['cookie']
-    headers['X-Forwarded-Proto'] = 'https'
   }
   const res = await fcAuth.get('/auth/users/token', {}, { headers })
   if (res.headers['set-cookie']) {
     ctx.set('set-cookie', res.headers['set-cookie'])
   }
-  ctx.body = { id: 0 }
-  
 }

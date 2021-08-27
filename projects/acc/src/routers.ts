@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import { guestAuth, loginSessionAuth } from './middlewares'
+import { guestAuth, loginSessionAuth } from '@smoex-nodejs/middle'
 import * as accRoutes from './routes/acc'
 import * as authRoutes from './routes/auth'
 

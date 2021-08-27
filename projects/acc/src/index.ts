@@ -1,9 +1,10 @@
 import { listenServer, createServer } from '@jsk-server/koa'
+import { configure, requestProxy } from '@smoex-nodejs/middle'
 import routers from './routers'
-import { configure, requestProxy } from './middlewares'
 
-const app = createServer(routers, {
-    middlewares: { configure, requestProxy },
+const app = createServer(routers, { 
+    configure, 
+    requestProxy, 
 })
 
 listenServer(app)

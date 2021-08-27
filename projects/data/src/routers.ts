@@ -1,5 +1,5 @@
 import Router from 'koa-router'
-import { loginSessionAuth } from './middlewares'
+import { loginSessionAuth } from '@smoex-nodejs/middle'
 import * as sharedRoutes from './routes/shared'
 import * as usersRouters from './routes/users'
 
