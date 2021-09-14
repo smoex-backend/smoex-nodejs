@@ -18,7 +18,7 @@
     "@jsk-aliyun/env": "^0.0.5",
     "@jsk-server/cli": "^0.0.4",
     "@jsk-server/env": "^0.0.2",
-    "@jsk-server/koa": "^0.0.8",
+    "@jsk-server/koa": "^0.0.9",
     "@jsk-server/mysql": "0.0.2",
     "@jsk-server/redis": "^0.0.1",
     "@koa/cors": "^3.1.0",

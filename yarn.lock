@@ -1368,10 +1368,10 @@
     lodash "^4.17.21"
     toml "^3.0.0"
 
-"@jsk-server/koa@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.8.tgz#7d72c66e688de0d7af8cb5f77de494ce9e6c6c51"
-  integrity sha512-AWVwNCDHKUvFFEQRWLiwBFPhgRs5FYPduUoCptSRl+PXDhwhto60524TAshMqAE5ufYWXo4niLnV6DUl++zkyQ==
+"@jsk-server/koa@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@jsk-server/koa/-/koa-0.0.9.tgz#33e648369cfc5e165302e62488e81c666c3aa116"
+  integrity sha512-znC/PNP3LxSGK1dk0Djg2oxp/vrsgvM9I0HKt22WO7N5VK4G4oHERt8+hEjgbz2ApPahb0jQxa8khoroPtx8Vg==
   dependencies:
     debug "^4.1.1"
     http-proxy-middleware "^1.0.5"
