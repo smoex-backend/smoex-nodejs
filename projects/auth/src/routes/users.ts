@@ -87,6 +87,7 @@ export async function thirdparty(ctx: IRouterContext) {
   }
   if (params.platform === 'wechat') {
     accessData.extra = await wx.checkcode(params.code, params.target)
+    accessData.target = accessData.extra.unionid || accessData.extra.openid
   } else {
     throw new Error('不支持登录的第三方账号')
   }

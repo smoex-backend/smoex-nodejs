@@ -69,11 +69,12 @@ export async function regist(ctx: RouterContext) {
   }
 
   let user: any
-  if (isAccessTokenType(params.type)) {
+  if (isAccessTokenType(session.type)) {
     user = await usersDao.saveAndBindAccessToken({
       ...params,
       type: accessType,
       extra: session.extra,
+      access_token: session.target,
     })
   } else {
     user = await usersDao.saveAndBindVerification({

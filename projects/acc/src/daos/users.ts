@@ -7,21 +7,16 @@ export async function saveAndBindAccessToken(data: any) {
     const exec = connectDSL(conn, USERS_DSL)
     const execAuth = connectDSL(conn, USERS_AUTH_DSL)
 
-    let { type, extra, access_token, ...userInfo } = data
-    const extraInfo = JSON.parse(extra)
-    // 微信小程序
-    if (type === 1) {
-        access_token = extraInfo.unionID
-    }
+    const { type, extra, access_token, ...userInfo } = data
 
     if (!access_token) {
-        throw new Error('Unsupport type')
+        throw new Error('Not Exists access_token')
     }
 
     return await startTransation(conn, async () => {
         const res = await exec`INSERT ${userInfo}`
         const uid = res.result.insertId
-        await execAuth`INSERT ${{ type, access_token, extra, uid }}`
+        await execAuth`INSERT ${{ type, access_token, extra: JSON.stringify(extra), uid }}`
         return { ...userInfo, uid }
     })
 
