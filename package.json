@@ -12,8 +12,9 @@
   "scripts": {
     "init": "yarn install && lerna bootstrap --use-workspaces && npm run build",
     "start": "node ./bin/start.js",
-    "build": "lerna run --stream --sort build && npm run copy",
+    "build": "npm run fix && lerna run --stream --sort build && npm run copy",
     "copy": "node ./bin/copy.js",
+    "pick-auth": "node ./bin/auth.js",
     "pub": "lerna exec --parallel -- npm publish",
     "build:prod": "npm run clean:cache && npm run build",
     "build:pub": "npm run build:prod && lerna publish -y",
