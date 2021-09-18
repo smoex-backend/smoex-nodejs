@@ -70,11 +70,11 @@ export async function getToken(ctx: RouterContext) {
 export async function thirdparty(ctx: IRouterContext) {
   const params = ctx.jsk.params([
     { name: 'code', type: 'string' },
-    { name: 'type', type: 'string' },
+    { name: 'platform', type: 'string' },
     { name: 'target', type: 'string' },
   ])
 
-  if (!params.code || !params.type || !wx.checkAppName(params.target)) {
+  if (!params.code || !params.platform || !wx.checkAppName(params.target)) {
     throw new Error('参数错误')
   }
 
@@ -83,11 +83,10 @@ export async function thirdparty(ctx: IRouterContext) {
   const { uuid } = ctx.auth.token
 
   const accessData: IAccessData = {
-    type: params.type,
+    type: params.platform,
   }
-  
-  if (params.type === 'wechat') {
-    accessData.extra = wx.checkcode(Number(params.code), params.target)
+  if (params.platform === 'wechat') {
+    accessData.extra = await wx.checkcode(params.code, params.target)
   } else {
     throw new Error('不支持登录的第三方账号')
   }
@@ -96,6 +95,7 @@ export async function thirdparty(ctx: IRouterContext) {
   const accessKey = `[access:login]${uuid}`
   // 验证同过后为短期验证, 默认10分钟有效期
   await redis.setex(accessKey, 10 * 60 , JSON.stringify(accessData))
+  ctx.body = true
 }
 
 export async function checkcode(ctx: IRouterContext) {

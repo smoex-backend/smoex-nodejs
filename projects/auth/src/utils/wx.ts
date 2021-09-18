@@ -22,7 +22,10 @@ export async function checkcode(code: number, name?: string) {
         js_code: code,
     }
     const res = await axios.get(`${WECHAT_API}/jscode2session?${qs.stringify(body)}`)
-    return await res.data as IWechatSession
+    if (res.data.errcode) {
+        throw new Error('验证失败: ' + res.data.errmsg)
+    }
+    return res.data as IWechatSession
 }
 
 export function checkAppName(name: string) {
