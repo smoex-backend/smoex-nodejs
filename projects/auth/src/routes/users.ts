@@ -1,5 +1,5 @@
 import { IRouterContext, RouterContext } from 'koa-router';
-import { fcClients, redisClients } from '@jsk-aliyun/env'
+import { fcClients, redisClients } from '@jsk-env/aliyun'
 import { decodeToken, randomCode, createUUID } from '../utils/jwt';
 import * as wx from '../utils/wx'
 

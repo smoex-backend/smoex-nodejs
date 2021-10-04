@@ -1,4 +1,4 @@
-import { authConfigs } from '@jsk-server/env'
+import { authConfigs } from '@jsk-env/server'
 import qs from 'qs'
 import axios from 'axios'
 const WECHAT_API = 'https://api.weixin.qq.com/sns'

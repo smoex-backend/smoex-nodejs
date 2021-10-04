@@ -1,4 +1,4 @@
-import { mysqlClients } from '@jsk-aliyun/env'
+import { mysqlClients } from '@jsk-env/aliyun'
 import { connectDSL, startTransation } from '@jsk-server/mysql'
 import { USERS_DSL, USERS_AUTH_DSL, USERS_VERI_DSL } from '../types/mapper'
 

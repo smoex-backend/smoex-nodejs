@@ -38,6 +38,7 @@ export async function info(ctx: RouterContext) {
   ctx.body = { id: 0 }
   if (cookieToken) {
     const token = decodeToken(cookieToken)
+    // TODO: 不存在 user 需要请求
     ctx.body = token.user || ctx.body
   }
   const headers = {} as any

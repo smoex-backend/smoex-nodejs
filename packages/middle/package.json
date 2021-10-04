@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "sideEffects": false,
   "scripts": {
-    "build": "tsc"
+    "build": "tsc -p tsconfig.prod.json"
   },
   "repository": {
     "type": "git",
@@ -28,8 +28,10 @@
   },
   "gitHead": "f12b8bd6d88f9f211723965110f37be5cb72617d",
   "dependencies": {
-    "@jsk-aliyun/env": "^0.0.5",
-    "@jsk-server/env": "^0.0.2",
+    "@jsk-env/aliyun": "^0.0.2",
+    "@jsk-env/aliyun-cli": "^0.0.2",
+    "@jsk-env/server": "^0.0.2",
+    "@jsk-env/server-cli": "^0.0.2",
     "@jsk-server/koa": "^0.0.9",
     "@jsk-server/redis": "^0.0.1",
     "@types/jsonwebtoken": "^8.5.4",

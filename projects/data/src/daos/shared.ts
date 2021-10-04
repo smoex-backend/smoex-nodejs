@@ -1,4 +1,4 @@
-import { mysqlClients, resClients } from '@jsk-aliyun/env'
+import { mysqlClients, resClients } from '@jsk-env/aliyun'
 import { startTransation, connectDSL } from '@jsk-server/mysql'
 import { SHARED_DSL, SHARED_HISTORY_DSL } from '../types/mapper'
 import { createTimePath } from '../utils'

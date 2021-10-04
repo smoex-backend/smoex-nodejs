@@ -1,7 +1,7 @@
 import { decodeToken, encodeToken, delayDate } from '../utils'
 import Cookies from 'cookies'
 import Koa from 'koa'
-import { redisClients, revertRequestUrl } from '@jsk-aliyun/env'
+import { redisClients, revertRequestUrl } from '@jsk-env/aliyun'
 
 export async function configure(ctx: Koa.Context, next: Koa.Next) {
     ctx.url = revertRequestUrl(ctx.url)

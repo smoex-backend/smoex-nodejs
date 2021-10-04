@@ -1,5 +1,5 @@
 import { RouterContext } from "koa-router";
-import { redisClients } from '@jsk-aliyun/env'
+import { redisClients } from '@jsk-env/aliyun'
 import * as usersDao from '../daos/users'
 
 type IAccessData = {

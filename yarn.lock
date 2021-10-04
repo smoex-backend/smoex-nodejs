@@ -1307,15 +1307,29 @@
     mysql2 "^2.2.5"
     toml "^3.0.0"
 
-"@jsk-aliyun/env@^0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@jsk-aliyun/env/-/env-0.0.3.tgz#92664582e646693dcdd720b999e548e80695e185"
-  integrity sha512-cDNWl7PL8nhPQWLvt02LF3sJfAHhsB+lF8yVkc3DnUqnydhrhRF8A8NNSlWA1SI9bB1fdlzWT4XdhzS5H76tfw==
+"@jsk-env/aliyun-cli@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@jsk-env/aliyun-cli/-/aliyun-cli-0.0.2.tgz#17d8530b264efa47c0ff0e5adaccaaf114fec22b"
+  integrity sha512-nCUU4aNxWjRAlqWVRVgm8tehldQIs3ibKhyIl8UfO65e2/okQp6mwM15XpTKmQBx6O2ETSLYUapUFOcbvE7GWg==
+  dependencies:
+    "@jsk-env/aliyun" "^0.0.2"
+    "@jsk-env/server-cli" "^0.0.2"
+    "@jsk-std/io" "^0.0.8"
+    "@jsk-std/rc" "^0.0.6"
+    compressing "^1.5.1"
+    webpack-cli "^3.3.12"
+
+"@jsk-env/aliyun@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@jsk-env/aliyun/-/aliyun-0.0.2.tgz#abbd92efb535c5dd166bf984b94692dab32d286b"
+  integrity sha512-Eua8QCIYkwRhnO6v1JaNjrJsvBPseQv5sX/zP3Hd0xlHMd8t4BlhlZjhC6aRCnODVppyIz7MtcPPTmJ4WLWZbQ==
   dependencies:
     "@alicloud/fc2" "^2.2.2"
     "@alicloud/pop-core" "^1.7.10"
+    "@jsk-env/args" "^0.0.2"
+    "@jsk-env/server" "^0.0.2"
     "@jsk-std/io" "^0.0.4"
-    "@jsk-std/x" "^0.0.1"
+    "@jsk-std/x" "^0.0.2"
     "@types/ali-oss" "^6.0.8"
     "@types/ioredis" "^4.26.4"
     "@types/lodash" "^4.14.170"
@@ -1323,27 +1337,52 @@
     ioredis "^4.27.6"
     lodash "^4.17.21"
     mysql2 "^2.2.5"
+
+"@jsk-env/args@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@jsk-env/args/-/args-0.0.2.tgz#2b6eee07949b968f2671a15cc08a06109ae5f98d"
+  integrity sha512-NMMKKg1d2+SscJUdA3JAaDRo4/BrXazij0ve5IQug23s/lNbEuoFtzogY88TWH9zXnVLhIAI5iNodRphvdF92Q==
+  dependencies:
+    "@jsk-std/x" "^0.0.2"
+    "@types/lodash" "^4.14.172"
+    "@types/node" "^16.4.12"
+    lodash "^4.17.21"
     toml "^3.0.0"
 
-"@jsk-aliyun/env@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@jsk-aliyun/env/-/env-0.0.5.tgz#cb776aebe92c59c4dac328c938b95d7230e4b63a"
-  integrity sha512-4Rdjb5+pFL5GclGoILII21y0XxicEMLE5G54E2lcKFDV4w3Te/fIAKkq0WdwRGnprtqzz7kSgruKjuFGIbKHdg==
+"@jsk-env/server-cli@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@jsk-env/server-cli/-/server-cli-0.0.2.tgz#48821a4b71fe931756dea49b4b041249bb4c9e82"
+  integrity sha512-Ryg+1uBthZypfy8UXgs4qdmZYVhVYh9u1i4sufbM2JzmIRfMnooj0iUkdBlJq59q4jSCdgrUXIp2RV1hhvsHWg==
   dependencies:
-    "@alicloud/fc2" "^2.2.2"
-    "@alicloud/pop-core" "^1.7.10"
-    "@jsk-server/env" "^0.0.2"
-    "@jsk-std/io" "^0.0.4"
-    "@jsk-std/x" "^0.0.1"
-    "@types/ali-oss" "^6.0.8"
-    "@types/ioredis" "^4.26.4"
-    "@types/lodash" "^4.14.170"
-    ali-oss "^6.15.2"
-    ioredis "^4.27.6"
-    lodash "^4.17.21"
-    mysql2 "^2.2.5"
+    "@babel/core" "^7.14.6"
+    "@babel/plugin-transform-runtime" "^7.14.5"
+    "@babel/preset-env" "^7.14.7"
+    "@babel/preset-react" "^7.14.5"
+    "@babel/preset-typescript" "^7.14.5"
+    "@jsk-env/args" "^0.0.2"
+    "@jsk-env/server" "^0.0.2"
+    "@jsk-std/rc" "^0.0.6"
+    "@jsk-std/x" "^0.0.2"
+    "@types/yargs" "^17.0.0"
+    babel-loader "^8.2.2"
+    cross-env "^7.0.3"
+    webpack "^5.42.1"
+    webpack-cli "^3.3.12"
+    yargs "^17.0.0-candidate.13"
 
-"@jsk-server/cli@0.0.4", "@jsk-server/cli@^0.0.4":
+"@jsk-env/server@^0.0.2":
+  version "0.0.2"
+  resolved "https://registry.npmjs.org/@jsk-env/server/-/server-0.0.2.tgz#1a1df7d9d0dbf845fe70435a1eee7b2c52307e3c"
+  integrity sha512-hNxSiSY2wimFEMLHUKxlLIBu9MUxIpfzgoGEMn+NN7JmhHASHhk0hPzFM5z6ZWIc+/HGPAvZMQfSi3lOjF3sHQ==
+  dependencies:
+    "@jsk-env/args" "^0.0.2"
+    "@jsk-std/x" "^0.0.2"
+    "@types/lodash" "^4.14.172"
+    "@types/node" "^16.4.12"
+    lodash "^4.17.21"
+    toml "^3.0.0"
+
+"@jsk-server/cli@0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@jsk-server/cli/-/cli-0.0.4.tgz#e0a814269d81034287222129bc061e4107b2acd7"
   integrity sha512-DBIe4McaT+VBSScUjkT8KRXsHH2V/r50ihuL48qCaA1BzJKY61MrOKEiIUox8qCHZ+mPD9CPszU9feY6dtwhPQ==
@@ -1357,16 +1396,6 @@
     webpack "^5.42.1"
     webpack-cli "^3.3.12"
     yargs "^17.0.0-candidate.13"
-
-"@jsk-server/env@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@jsk-server/env/-/env-0.0.2.tgz#7cec14561e443e9537b524d60dc0ea0d2406ea8f"
-  integrity sha512-gv33yhJcZ42FNWmRsADVtFgTXjxfTxUceAYOor6ikqC/XQ+q38hYtJcw1+py1/+5eWciWjvkwyB2lvErHGwkRw==
-  dependencies:
-    "@types/lodash" "^4.14.172"
-    "@types/node" "^16.4.12"
-    lodash "^4.17.21"
-    toml "^3.0.0"
 
 "@jsk-server/koa@^0.0.9":
   version "0.0.9"
@@ -1415,6 +1444,38 @@
   integrity sha512-DvJdxhNvXzP5tbWZfNre+FfM4EWM43KXp5hZ9icrP37lMnxt0lLvh0wap3CNxqCsEAL/dTyg0/qhanqy+DHC2Q==
   dependencies:
     "@jsk-std/x" "^0.0.1"
+
+"@jsk-std/io@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.npmjs.org/@jsk-std/io/-/io-0.0.7.tgz#4fcb88b6593afa9ce789e3d03658162e0bcb2149"
+  integrity sha512-XJ+T+axBelWwErc5Ca01Z3Dzm7haIIalIkUpJjMRoxv8JvgWELl0r+5UprSOdbReidKMCYn1qRNNelI4GE2FPQ==
+  dependencies:
+    "@jsk-std/rc" "^0.0.3"
+    "@jsk-std/x" "^0.0.1"
+
+"@jsk-std/io@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.npmjs.org/@jsk-std/io/-/io-0.0.8.tgz#d835ad4dd276b9233617d99591f95c0d3ac05e18"
+  integrity sha512-kainlACtahIDaJad6o6DHiQYdef6T1AwPpi1WGlmKAnOVrD8cuuAMG4849hfdAVDidRrrkNT8gwS0GJRFfqzOg==
+  dependencies:
+    "@jsk-std/rc" "^0.0.3"
+    "@jsk-std/x" "^0.0.1"
+
+"@jsk-std/rc@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.npmjs.org/@jsk-std/rc/-/rc-0.0.3.tgz#1984115591a49fdf713b0049e8bf4ae878d3dbd7"
+  integrity sha512-o2u72Bkdilzsqlfi9serhPbfKcJNdsDfs9vlvWNQGS5aiSz3XFPAvhwjKzBF4KqHavPDv7ltspyLR66qmrj/Sg==
+  dependencies:
+    "@jsk-std/io" "^0.0.7"
+    yargs "^17.2.1"
+
+"@jsk-std/rc@^0.0.6":
+  version "0.0.6"
+  resolved "https://registry.npmjs.org/@jsk-std/rc/-/rc-0.0.6.tgz#a4288dc1a095034f534f91195f1dce9eb938e5dc"
+  integrity sha512-F0QFcU5aS9DF9+UuHa9zcufuu64X+EntQIs3kZpUFKU8ApUXldSNZCzdoiAHK4bFIfJ7HkrK+CwChL07134wEA==
+  dependencies:
+    "@jsk-std/io" "^0.0.8"
+    yargs "^17.2.1"
 
 "@jsk-std/x@^0.0.1":
   version "0.0.1"
@@ -4066,7 +4127,7 @@ create-require@^1.1.0:
   resolved "https://registry.yarnpkg.com/create-require/-/create-require-1.1.1.tgz#c1d7e8f1e5f6cfc9ff65f9cd352d37348756c333"
   integrity sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==
 
-cross-env@^7.0.2:
+cross-env@^7.0.2, cross-env@^7.0.3:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-7.0.3.tgz#865264b29677dc015ba8418918965dd232fc54cf"
   integrity sha512-+/HKd6EgcQCJGh2PSjZuUitQBQynKor4wrFbRg4DtAgS1aWO+gU52xpH7M9ScGgXSYmAVS9bIJ8EzuaGw0oNAw==
@@ -10947,6 +11008,19 @@ yargs@^17.0.0-candidate.13:
   version "17.1.1"
   resolved "https://registry.yarnpkg.com/yargs/-/yargs-17.1.1.tgz#c2a8091564bdb196f7c0a67c1d12e5b85b8067ba"
   integrity sha512-c2k48R0PwKIqKhPMWjeiF6y2xY/gPMUlro0sgxqXpbOIohWiLNXWslsootttv7E1e73QPAMQSg5FeySbVcpsPQ==
+  dependencies:
+    cliui "^7.0.2"
+    escalade "^3.1.1"
+    get-caller-file "^2.0.5"
+    require-directory "^2.1.1"
+    string-width "^4.2.0"
+    y18n "^5.0.5"
+    yargs-parser "^20.2.2"
+
+yargs@^17.2.1:
+  version "17.2.1"
+  resolved "https://registry.npmjs.org/yargs/-/yargs-17.2.1.tgz#e2c95b9796a0e1f7f3bf4427863b42e0418191ea"
+  integrity sha512-XfR8du6ua4K6uLGm5S6fA+FIJom/MdJcFNVY8geLlp2v8GYbOXD4EB1tPNZsRn4vBzKGMgb5DRZMeWuFc2GO8Q==
   dependencies:
     cliui "^7.0.2"
     escalade "^3.1.1"

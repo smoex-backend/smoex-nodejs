@@ -14,10 +14,10 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@jsk-aliyun/env": "^0.0.5",
-    "@jsk-server/cli": "^0.0.4",
-    "@jsk-server/env": "^0.0.2",
+    "@jsk-env/aliyun": "^0.0.2",
+    "@jsk-env/aliyun-cli": "^0.0.2",
+    "@jsk-env/server": "^0.0.2",
+    "@jsk-env/server-cli": "^0.0.2",
     "@jsk-server/koa": "^0.0.9",
     "@jsk-server/mysql": "0.0.2",
     "@jsk-server/redis": "^0.0.1",

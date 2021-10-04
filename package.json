@@ -27,6 +27,7 @@
     "fix": "node ./node_modules/@jsk-aliyun/cli/legacy/fix-alioss.js"
   },
   "devDependencies": {
+    "@jsk-std/rc": "^0.0.6",
     "cross-env": "^7.0.2",
     "jest": "^26.0.1",
     "lerna": "^3.20.2",
@@ -34,10 +35,5 @@
     "rimraf": "^3.0.2",
     "ts-jest": "^26.1.0",
     "tslint": "^6.1.2"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,md,css,scss,html}": [
-      "git add"
-    ]
   }
 }

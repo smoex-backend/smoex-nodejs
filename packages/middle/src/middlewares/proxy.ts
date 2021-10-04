@@ -1,4 +1,4 @@
-import { createProxyMatcher, fcRequestProxy } from '@jsk-aliyun/env'
+import { createProxyMatcher, fcRequestProxy } from '@jsk-env/aliyun'
 // @ts-ignore
 import k2c from 'koa2-connect'
 import { createProxyMiddleware } from 'http-proxy-middleware'

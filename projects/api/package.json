@@ -21,9 +21,10 @@
     "typescript": "^4.3.5"
   },
   "dependencies": {
-    "@babel/plugin-transform-runtime": "^7.14.5",
-    "@jsk-aliyun/env": "^0.0.3",
-    "@jsk-server/cli": "^0.0.4",
+    "@jsk-env/aliyun": "^0.0.2",
+    "@jsk-env/aliyun-cli": "^0.0.2",
+    "@jsk-env/server": "^0.0.2",
+    "@jsk-env/server-cli": "^0.0.2",
     "@jsk-server/koa": "^0.0.9",
     "@koa/cors": "^3.1.0",
     "@smoex-nodejs/middle": "^0.0.1",

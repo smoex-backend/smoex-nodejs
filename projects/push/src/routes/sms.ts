@@ -1,5 +1,5 @@
 import { RouterContext } from 'koa-router';
-import { smsClients, aliyunConfigs } from '@jsk-aliyun/env'
+import { smsClients, aliyunConfigs } from '@jsk-env/aliyun'
 
 export async function sendcode(ctx: RouterContext) {
   const params = ctx.jsk.params([
