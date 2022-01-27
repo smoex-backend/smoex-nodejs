@@ -1,0 +1,15 @@
+[fc]
+alias = 'smoex-nodejs-file.EF4326601B85'
+
+[res]
+client = 'oss://stable'
+
+[res.shared]
+package = 'files_shared'
+
+[oss]
+region = "oss-cn-shanghai"
+
+[oss.stable]
+bucket = "smoex-public"
+endpoint = "https://public.smoex.com"

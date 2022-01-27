@@ -1,4 +1,4 @@
-import { fcClients, redisClients } from "@jsk-aliyun/env";
+import { fcClients, redisClients } from "@jsk-env/aliyun";
 import { RouterContext } from "koa-router";
 import { decodeToken } from "../utils/jwt";
 

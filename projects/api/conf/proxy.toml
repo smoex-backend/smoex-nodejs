@@ -3,3 +3,6 @@ client = 'fc://data'
 
 ['/acc']
 client = 'fc://acc'
+
+['/file']
+client = 'fc://file'

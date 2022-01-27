@@ -192,13 +192,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/config.d.ts": {
-        "version": "8c83d98b06d7ecfc0e689cb7db724d036e2e07a9e2d75b1fb1a0e9f40c4c5b92",
-        "signature": "8c83d98b06d7ecfc0e689cb7db724d036e2e07a9e2d75b1fb1a0e9f40c4c5b92",
+        "version": "0cfcf4697e4e8581f028a342f7ef57ca790a4bf3e8ee9a6aa72c3bee757b17f1",
+        "signature": "0cfcf4697e4e8581f028a342f7ef57ca790a4bf3e8ee9a6aa72c3bee757b17f1",
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/ali-fc.d.ts": {
-        "version": "4f1557078e54d71366d2fb316c3e030aa41a5280842c2b7cca6063563793d447",
-        "signature": "4f1557078e54d71366d2fb316c3e030aa41a5280842c2b7cca6063563793d447",
+        "version": "36c1fbf9fb6aeadc9f71e06067b1b29e8591bc15d9d76de8ff33158ce4ecad26",
+        "signature": "36c1fbf9fb6aeadc9f71e06067b1b29e8591bc15d9d76de8ff33158ce4ecad26",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/ali-oss/index.d.ts": {
@@ -207,8 +207,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/ali-oss.d.ts": {
-        "version": "111beb474f6cf94ca3138b866b817b4ab4830aa9f0c24626ea7e7887a4b5ebdf",
-        "signature": "111beb474f6cf94ca3138b866b817b4ab4830aa9f0c24626ea7e7887a4b5ebdf",
+        "version": "55cad7cdcdeb7bda0dfae149a8a05015adc40d5fcbdcbf9ce265eadd2961b646",
+        "signature": "55cad7cdcdeb7bda0dfae149a8a05015adc40d5fcbdcbf9ce265eadd2961b646",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/assert.d.ts": {
@@ -462,18 +462,18 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/ali-oss-res.d.ts": {
-        "version": "7aaa77ec5451e3e718a75ca649260ef5cb5a696d94e3b80afb7029e2cda2b9ff",
-        "signature": "7aaa77ec5451e3e718a75ca649260ef5cb5a696d94e3b80afb7029e2cda2b9ff",
+        "version": "e4778fba4efdebe79d9f13fb16fe74a3b3a954bd398d8c601ab45e1392ad04d9",
+        "signature": "e4778fba4efdebe79d9f13fb16fe74a3b3a954bd398d8c601ab45e1392ad04d9",
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/ali-fc-proxy.d.ts": {
-        "version": "cc0330783b9b35f925aa4c1a4ffe874e5cad6f3843a859ead479805c24b9801c",
-        "signature": "cc0330783b9b35f925aa4c1a4ffe874e5cad6f3843a859ead479805c24b9801c",
+        "version": "ff7cc13a9e9aefae9be4c78bf7ac98e8617d8d559aa482ed47c25c57b6c23d3b",
+        "signature": "ff7cc13a9e9aefae9be4c78bf7ac98e8617d8d559aa482ed47c25c57b6c23d3b",
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/ali-sms.d.ts": {
-        "version": "44fe73465bf243b9e7f84c8500122fe9c8690123c94a86296f5d04daf38d29e9",
-        "signature": "44fe73465bf243b9e7f84c8500122fe9c8690123c94a86296f5d04daf38d29e9",
+        "version": "ca2cbc267bb7eb0253195a80f12e6cce4ba969b5eca53fe82110860564d8854d",
+        "signature": "ca2cbc267bb7eb0253195a80f12e6cce4ba969b5eca53fe82110860564d8854d",
         "affectsGlobalScope": false
       },
       "../../node_modules/mysql2/typings/mysql/lib/protocol/sequences/sequence.d.ts": {
@@ -552,8 +552,8 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/mysql.d.ts": {
-        "version": "c125476774b5e292321dded322a115560ac288e1b9d2010dc1933feb3dbd5d83",
-        "signature": "c125476774b5e292321dded322a115560ac288e1b9d2010dc1933feb3dbd5d83",
+        "version": "6b0c38f96c5ae1806cbd147367a143bae1441cb8c5bf556a4c0174071f3da10f",
+        "signature": "6b0c38f96c5ae1806cbd147367a143bae1441cb8c5bf556a4c0174071f3da10f",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/ioredis/index.d.ts": {
@@ -562,13 +562,13 @@
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/clients/redis.d.ts": {
-        "version": "bee484247a1b7e37e56c411c254ce0d45e703727ca32069cff4dede855c4a794",
-        "signature": "bee484247a1b7e37e56c411c254ce0d45e703727ca32069cff4dede855c4a794",
+        "version": "568785a8c9998800c960397a3c57fb5d75a65271f7fd8309ba8af7de792d34ce",
+        "signature": "568785a8c9998800c960397a3c57fb5d75a65271f7fd8309ba8af7de792d34ce",
         "affectsGlobalScope": false
       },
       "../../node_modules/@jsk-env/aliyun/lib/index.d.ts": {
-        "version": "54c1abc9710582e842f713be116782b1e51f48d65bae449f13371c51d40fef58",
-        "signature": "54c1abc9710582e842f713be116782b1e51f48d65bae449f13371c51d40fef58",
+        "version": "1221f609abdf1ca75bcacba45779bfecfaf55308fe705f6023eb271104b04c86",
+        "signature": "1221f609abdf1ca75bcacba45779bfecfaf55308fe705f6023eb271104b04c86",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/range-parser/index.d.ts": {
@@ -688,7 +688,7 @@
       },
       "./src/middlewares/proxy.ts": {
         "version": "1608d92a4d519b93e7f7bd0895e700f7cf00d2f999832321ac66ab4de2ee2d92",
-        "signature": "2c39ef8a811a07f3e22b91253cb8cdcbd5a1568ec8fc612989016d6e6b0d02ee",
+        "signature": "f1f35c466cfd2b82ba74676bdfa6e64e62e356eace3fbae63a1f70d3ee9e7523",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/jsonwebtoken/index.d.ts": {
@@ -698,17 +698,17 @@
       },
       "./src/utils/index.ts": {
         "version": "43ec2de8a386f45ed237ecf86c8d57cea5c494fe3c692570eb4979de7423dbaf",
-        "signature": "96c1e01a56d04ea9196d24886b919c988fdefe803da7916bc62989dc2cc938a4",
+        "signature": "0ecefc024d8ba0ea495059087ce75f145d457280918acbe05812e00eeb767b53",
         "affectsGlobalScope": false
       },
       "./src/middlewares/normalize.ts": {
         "version": "e1cc8c0b6dc191f77f0876dac402cc68ce186e8e3b734b72ee109be9f347002c",
-        "signature": "0a2a5c60479a741313d2419ddd4b1942b42784fceaec0d1f71be82ce692b051e",
+        "signature": "ce0d1b0aaa62c1742cf06b75fddd253865f611f2c38f6d11e32b78790a48e549",
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
         "version": "48be61a2014b5099b4f861f6fbe203ad1b4ba5c5512b724cd02a513dae79819a",
-        "signature": "32cd7583a5c48a4afae25482fe3e60c559e0158064ad5bfe3a008855fd8ab3c4",
+        "signature": "3e4b032c9c1e4bc39ec6d45993ef32337a79629738ff245ff4f9ac385aa331a6",
         "affectsGlobalScope": false
       },
       "../../node_modules/@babel/types/lib/index.d.ts": {
@@ -769,6 +769,36 @@
       "../../node_modules/@types/eslint-scope/index.d.ts": {
         "version": "82772e5d55062a042a2715a555d347275a663940926fc785705eb082010cb9f6",
         "signature": "82772e5d55062a042a2715a555d347275a663940926fc785705eb082010cb9f6",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/formidable.d.ts": {
+        "version": "ac9788076b6b9e4514ff1286de37bf90f8e2c1dd7a772c2e746232eaa4184233",
+        "signature": "ac9788076b6b9e4514ff1286de37bf90f8e2c1dd7a772c2e746232eaa4184233",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/parsers/index.d.ts": {
+        "version": "49d41b881040e728bc28d463806cdff98b64c69e9da721adcf0ec34345f691b5",
+        "signature": "49d41b881040e728bc28d463806cdff98b64c69e9da721adcf0ec34345f691b5",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/persistentfile.d.ts": {
+        "version": "0623c302651761724ec920bb95a27d9d47ea71f7e6ef7e4d6f60bd05c86cf50c",
+        "signature": "0623c302651761724ec920bb95a27d9d47ea71f7e6ef7e4d6f60bd05c86cf50c",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/volatilefile.d.ts": {
+        "version": "b6e465de1852a328392b432b13ee8334b209f3493053e85aa8f0b5f78368d634",
+        "signature": "b6e465de1852a328392b432b13ee8334b209f3493053e85aa8f0b5f78368d634",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/formidableerror.d.ts": {
+        "version": "afc87a77703487af971af992374f59a6cc729411cd8498a492eb14cce49f092b",
+        "signature": "afc87a77703487af971af992374f59a6cc729411cd8498a492eb14cce49f092b",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/formidable/index.d.ts": {
+        "version": "2c26ca5810ebbf0129a279811816d6fd703b79b087c1bd723e3dd9bfe75681da",
+        "signature": "2c26ca5810ebbf0129a279811816d6fd703b79b087c1bd723e3dd9bfe75681da",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/minimatch/index.d.ts": {
@@ -937,6 +967,7 @@
       "rootDir": "./src",
       "outDir": "./lib",
       "project": "./tsconfig.prod.json",
+      "watch": true,
       "configFilePath": "./tsconfig.prod.json"
     },
     "referencedMap": {
@@ -1076,6 +1107,38 @@
         "../../node_modules/@types/node/util.d.ts",
         "../../node_modules/@types/qs/index.d.ts",
         "../../node_modules/@types/serve-static/index.d.ts"
+      ],
+      "../../node_modules/@types/formidable/formidable.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/http.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/formidableerror.d.ts": [
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/index.d.ts": [
+        "../../node_modules/@types/formidable/formidable.d.ts",
+        "../../node_modules/@types/formidable/formidableerror.d.ts",
+        "../../node_modules/@types/formidable/parsers/index.d.ts",
+        "../../node_modules/@types/formidable/persistentfile.d.ts",
+        "../../node_modules/@types/formidable/volatilefile.d.ts",
+        "../../node_modules/@types/node/index.d.ts",
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/parsers/index.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/persistentfile.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/events.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/volatilefile.d.ts": [
+        "../../node_modules/@types/formidable/persistentfile.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
       ],
       "../../node_modules/@types/glob/index.d.ts": [
         "../../node_modules/@types/minimatch/index.d.ts",
@@ -2099,6 +2162,38 @@
         "../../node_modules/@types/qs/index.d.ts",
         "../../node_modules/@types/serve-static/index.d.ts"
       ],
+      "../../node_modules/@types/formidable/formidable.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/http.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/formidableerror.d.ts": [
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/index.d.ts": [
+        "../../node_modules/@types/formidable/formidable.d.ts",
+        "../../node_modules/@types/formidable/formidableerror.d.ts",
+        "../../node_modules/@types/formidable/parsers/index.d.ts",
+        "../../node_modules/@types/formidable/persistentfile.d.ts",
+        "../../node_modules/@types/formidable/volatilefile.d.ts",
+        "../../node_modules/@types/node/index.d.ts",
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/parsers/index.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/stream.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/persistentfile.d.ts": [
+        "../../node_modules/@types/formidable/index.d.ts",
+        "../../node_modules/@types/node/events.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
+      "../../node_modules/@types/formidable/volatilefile.d.ts": [
+        "../../node_modules/@types/formidable/persistentfile.d.ts",
+        "../../node_modules/@types/node/util.d.ts"
+      ],
       "../../node_modules/@types/glob/index.d.ts": [
         "../../node_modules/@types/minimatch/index.d.ts",
         "../../node_modules/@types/node/events.d.ts",
@@ -3000,6 +3095,12 @@
       "../../node_modules/@types/estree/index.d.ts",
       "../../node_modules/@types/express-serve-static-core/ts4.0/index.d.ts",
       "../../node_modules/@types/express/ts4.0/index.d.ts",
+      "../../node_modules/@types/formidable/formidable.d.ts",
+      "../../node_modules/@types/formidable/formidableerror.d.ts",
+      "../../node_modules/@types/formidable/index.d.ts",
+      "../../node_modules/@types/formidable/parsers/index.d.ts",
+      "../../node_modules/@types/formidable/persistentfile.d.ts",
+      "../../node_modules/@types/formidable/volatilefile.d.ts",
       "../../node_modules/@types/glob/index.d.ts",
       "../../node_modules/@types/graceful-fs/index.d.ts",
       "../../node_modules/@types/http-assert/index.d.ts",
